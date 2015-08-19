@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0-1-QuadricEquation", "0-GettingStarted\0-1-QuadricEquation.csproj", "{864ED802-B622-4B01-BC51-3CE3F2654718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0-2-GuessNumber", "0-2-GuessNumber\0-2-GuessNumber.csproj", "{D7121840-79A7-4B0A-A242-CB23EDD08B93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0-3-Fibbonachi", "0-3-Fibbonachi\0-3-Fibbonachi.csproj", "{3FD2BF2F-825A-481A-962C-EDA314E0B408}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{864ED802-B622-4B01-BC51-3CE3F2654718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{864ED802-B622-4B01-BC51-3CE3F2654718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{864ED802-B622-4B01-BC51-3CE3F2654718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{864ED802-B622-4B01-BC51-3CE3F2654718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7121840-79A7-4B0A-A242-CB23EDD08B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7121840-79A7-4B0A-A242-CB23EDD08B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7121840-79A7-4B0A-A242-CB23EDD08B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7121840-79A7-4B0A-A242-CB23EDD08B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD2BF2F-825A-481A-962C-EDA314E0B408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD2BF2F-825A-481A-962C-EDA314E0B408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD2BF2F-825A-481A-962C-EDA314E0B408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD2BF2F-825A-481A-962C-EDA314E0B408}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
