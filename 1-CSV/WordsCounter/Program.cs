@@ -1,9 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace WordsCounter
 {
@@ -45,6 +44,7 @@ namespace WordsCounter
             }
 
             ReadWords();
+            WriteCSV();
         }
 
         private void ReadWords()
@@ -55,6 +55,7 @@ namespace WordsCounter
             string line;
             while (null != (line = sr.ReadLine()))
             {
+                line = line.ToLower();
                 bool word = false;
                 sb.Clear();
                 foreach (char sym in line)
@@ -71,25 +72,15 @@ namespace WordsCounter
                         continue;
                     }
 
-                    string currentWord = sb.ToString();
+                    AddWord(sb.ToString());
                     sb.Clear();
                     word = false;
-                    if (!words.ContainsKey(currentWord))
-                    {
-                        words[currentWord] = 0;
-                    }
-                    words[currentWord]++;
                 }
 
                 if (word)
                 {
-                    string currentWord = sb.ToString();
+                    AddWord(sb.ToString());
                     sb.Clear();
-                    if (!words.ContainsKey(currentWord))
-                    {
-                        words[currentWord] = 0;
-                    }
-                    words[currentWord]++;
                 }
             }
         }
@@ -97,7 +88,34 @@ namespace WordsCounter
         private void WriteCSV()
         {
             StringBuilder sb = new StringBuilder();
-            
+            StreamWriter sw = new StreamWriter(outputFile);
+
+            int totalWordsCount = (from wd in words.Keys select words[wd]).Sum();
+            foreach (KeyValuePair<string, int> kvp in words.OrderByDescending(pair => pair.Value))
+            {
+                string currentWord = kvp.Key;
+                int currentFreq = kvp.Value;
+
+                sb.Append(currentWord);
+                sb.Append(',');
+                sb.Append(currentFreq);
+                sb.Append(',');
+                sb.Append((100 * (double)currentFreq / totalWordsCount).ToString("F2"));
+                sw.WriteLine(sb.ToString());
+                sb.Clear();
+            }
+
+            sw.Flush();
+            sw.Close();
+        }
+
+        private void AddWord(string newWord)
+        {
+            if (!words.ContainsKey(newWord))
+            {
+                words[newWord] = 0;
+            }
+            words[newWord]++;
         }
     }
 }
